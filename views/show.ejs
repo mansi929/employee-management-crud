@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Employee Details</title>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body class="details-page">
+    <div class="details-container">
+      <h1>Employee Details</h1>
+
+      <div class="details-box">
+        <p>
+          <strong>ID:</strong>
+          <%= employee.id %>
+        </p>
+
+        <p>
+          <strong>Name:</strong>
+          <%= employee.name %>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <%= employee.email %>
+        </p>
+
+        <p>
+          <strong>Department:</strong>
+          <%= employee.department %>
+        </p>
+
+        <p>
+          <strong>Salary:</strong>
+          ₹<%= employee.salary %>
+        </p>
+      </div>
+
+      <form action="/employees" method="get">
+        <button class="back-btn">Back to Employees</button>
+      </form>
+    </div>
+  </body>
+</html>

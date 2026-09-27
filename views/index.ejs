@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee List</title>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body class="list-page">
+
+    <h1>Employees Management System</h1>
+
+    <table class="employee-table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+
+      <% for(employee of employees) { %>
+
+      <tr>
+        <td><%= employee.id %></td>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.department %></td>
+        <td>₹<%= employee.salary %></td>
+
+        <td class="action-buttons">
+
+          <form
+            action="/employees/<%= employee.id %>/edit"
+            method="get"
+          >
+            <button class="edit-btn">Edit</button>
+          </form>
+
+          <form
+            action="/employees/<%= employee.id %>?_method=DELETE"
+            method="post"
+          >
+            <button class="delete-btn">Delete</button>
+          </form>
+
+          <form
+            action="/employees/<%= employee.id %>"
+            method="get"
+          >
+            <button class="details-btn">Details</button>
+          </form>
+
+        </td>
+      </tr>
+
+      <% } %>
+    </table>
+
+    <form action="/employees/new" method="get" class="add-form">
+      <button class="add-btn">+ Add Employee</button>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Edit Employee</title>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body class="form-page">
+    <div class="form-container">
+      <h1>Edit Employee</h1>
+
+      <form
+        action="/employees/<%= employee.id %>?_method=patch"
+        method="post"
+        class="employee-form"
+      >
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          value="<%= employee.name %>"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label>Email</label>
+        <input
+          type="text"
+          name="email"
+          value="<%= employee.email %>"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label>Department</label>
+        <input
+          type="text"
+          name="department"
+          value="<%= employee.department %>"
+          placeholder="Enter your department"
+          required
+        />
+
+        <label>Salary</label>
+        <input
+          type="text"
+          name="salary"
+          value="<%= employee.salary %>"
+          placeholder="Enter your salary"
+          required
+        />
+
+        <button type="submit" class="submit-btn">Update Employee</button>
+      </form>
+    </div>
+  </body>
+</html>
